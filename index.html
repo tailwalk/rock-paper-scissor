@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1> Paper Scissors</h1>
+    </header>
+    <div class="scores">
+        <div class="badge" id="user">User</div>
+        <div class="badge" id="comp">Bot</div>
+        <span id="user-score">0:</span><span id="comp-score">0</span>
+    </div>
+        <div class="result">
+            <p>Paper covers rock. You Win!</p>
+        </div>
+        <div class="choices">
+            <div class="choice" id="s">
+                <img src="https://www.clipartkey.com/mpngs/m/17-175272_transparent-scissor-clip-art-rock-paper-scissors-png.png" alt="">
+            </div>
+            <div class="choice" id="p">
+                <img src="https://th.bing.com/th/id/OIP.36zVlvkL-kHsbLhr-bsh-AHaG5?pid=ImgDet&rs=1" alt="">
+            </div>
+            <div class="choice" id="r">
+                <img src="https://th.bing.com/th/id/R.75a0613139f1cae414e77eff867b682d?rik=Ugq9ctg1nPhTBA&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f366-3660921_computer-clip-art-rockpaperscissors-rock-paper-scissors-img.png&ehk=yW%2f%2blfFByj5dTYmL8qfnhTxEvp5YL1T3UEnKbYUwcI0%3d&risl=&pid=ImgRaw&r=0" alt="">
+            </div>
+        </div>
+        <p id="message">Choose Your Fate!</p>
+    
     <script src="game.js"></script>
 </body>
 </html>

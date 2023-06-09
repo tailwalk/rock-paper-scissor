@@ -29,7 +29,7 @@ function rounds(playerSelection, getCompChoice){
 function getP1Choice(){
     let validatedInput = false
     while(validatedInput == false){
-        const choice = prompt("Rock Paper or Scissors")
+        const choice = prompy("Rock Paper or Scissors")
         if(choice == null){
         continue;
         }

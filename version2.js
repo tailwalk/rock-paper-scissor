@@ -13,25 +13,41 @@ function getCompChoice(user, comp){
     const botChoice = choices[Math.floor(Math.random() * choices.length)]
     return botChoice
 }
+function switchToWord(letter){
+    if(letter === 'r'){
+        return 'Rock'
+    }
+    if(letter === 'p'){
+        return 'Paper'
+    }
+    if(letter === 's'){
+        return 'Scissors'
+    }
+}
 function win(userChoice, compChoice){
     userScore++
-    console.log(userScore)
-    console.log('win')
     userTally.innerHTML = userScore
     compTally.innerHTML = compScore
-    result.innerHTML = `${userChoice} beats ${compChoice}`
+    result.innerHTML = `${switchToWord(userChoice)} beats ${switchToWord(compChoice)}. You Win!`
+    document.getElementById(userChoice).classList.add('greenglow')
+    setTimeout(() => document.getElementById(userChoice).classList.remove('greenglow'), 1000)
 
 }
-function lose(){
+function lose(userChoice,compChoice){
     compScore++
-    console.log(compScore)
     userTally.innerHTML = userScore
     compTally.innerHTML = compScore
+    result.innerHTML = `${switchToWord(compChoice)} beats ${switchToWord(userChoice)}. You Lose!`
+    document.getElementById(userChoice).classList.add('redglow')
+    setTimeout(() => document.getElementById(userChoice).classList.remove('redglow'), 1000)
     
 }
-function tie(){
+function tie(userChoice, compChoice){
     userTally.innerHTML = userScore
     compTally.innerHTML = compScore
+    result.innerHTML = `You and the Bot Chose ${switchToWord(compChoice)}. It's a tie!`
+    document.getElementById(userChoice).classList.add('grayglow')
+    setTimeout(() => document.getElementById(userChoice).classList.remove('grayglow'), 1000)
     
 }
 
@@ -58,14 +74,8 @@ function game(userChoice){
 game()
 
 function main(){
-    rock.addEventListener('click', function(){
-        game('r');
-    })
-    paper.addEventListener('click', function(){
-        game('p');
-    })
-    scissors.addEventListener('click', function(){
-        game('s');
-    })
+    rock.addEventListener('click', () =>game('r'));
+    paper.addEventListener('click', () =>game('p'));
+    scissors.addEventListener('click', () => game('s'));
     }
 main()

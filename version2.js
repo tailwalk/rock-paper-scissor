@@ -8,7 +8,7 @@ let compScore = 0
 const userTally = document.getElementById('user-score')
 const compTally = document.getElementById('comp-score')
 
-function getCompChoice(user, comp){
+function getCompChoice(comp){
     const choices =["r", "p", "s"];
     const botChoice = choices[Math.floor(Math.random() * choices.length)]
     return botChoice
